@@ -20,12 +20,13 @@ if nav == "Add Expense":
     category = st.selectbox("Category", ["Food", "Transportation", "Entertainment", "Other"])
     amount = st.number_input("Amount", 0.00, 100000.00, step=10.00)
     
-if st.button("Add Expense"):
+    if st.button("Add Expense"):
         new_expense = {"Date": date, "Category": category, "Amount": amount}
         new_expense_df = pd.DataFrame([new_expense])  # Convert dictionary to DataFrame
         data = pd.concat([data, new_expense_df], ignore_index=True)  # Concatenate existing and new data
         data.to_csv("Expense_Data.csv", mode='a', header=False, index=False)
         st.success("Expense added successfully!")
+
 
 
 if nav == "View Expenses":
