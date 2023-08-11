@@ -12,7 +12,8 @@ st.title("Daily Expense Tracker")
 nav = st.sidebar.radio("Navigation", ["Home", "Add Expense", "View Expenses"])
 
 if nav == "Home":
-    st.image("your-new-salary-iStockphoto.jpg", width=500)
+    image_url = "your-new-salary-iStockphoto.jpg"
+    st.image(image_url, width=500)
 if nav == "Add Expense":
     st.header("Add Your Daily Expense")
     date = st.date_input("Date", pd.Timestamp.today())
